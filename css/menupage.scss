@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2? family=Roboto:wght@100&display=swap');
+
+@import url(https://fonts.googleapis.com/css?family=Shrikhand:regular);
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        font-family: roboto, sans-serif;
+    }
+    /* btn retour */ 
+    .retour {
+        position: absolute;
+        top: 25px;
+        left: 30px;
+        font-size: x-large;
+        cursor: pointer;
+        color: black;
+    }
+    /* logo */
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        img {
+            height: 40px;
+        }
+    }
+    /* cover */
+  
+    /* ..... */
+    #body {
+        background-color: rgb(228, 228, 228);
+    }
+    .body-page {
+        transform: translateY(-90px);
+        background: rgb(228, 228, 228);
+        border-radius: 50px 50px 0 0;
+        padding: 20px;
+    }
+    .titre-food {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+            font-family: shrikhand;
+            font-size: 30px;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+        /* heart */
+        .heart {
+            position: relative;
+            cursor: pointer;
+        }
+        .fas {
+            font-size: 30px;
+            opacity: 0%;
+            transition: all 400ms;
+            position: absolute;
+            left: 0;
+        }
+        .fas:hover {
+            opacity: 100%;
+            transform: scale(1.05);
+            color: #9356DC;
+        }
+        
+        .far {
+            font-size: 30px;
+            transition: all 400ms;
+            overflow: hidden;
+        }
+        .far:hover {
+            transform: scale(1.05);
+            color: #9356DC;
+            opacity: 0;
+        }
+    }
+
+    .entree,
+    .plats,
+    .desserts { 
+        h3 {
+            font-size: 20px;
+            font-weight: 100;
+            margin: 0;
+            margin-top: 40px;
+        }
+        .ligne-verte {
+            height: 5px;
+            width: 50px;
+            background: #99E2D0;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+    }
+    .card-plat {
+        height: 70px;
+        display: flex;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        margin-left: 4%;
+        margin-right: 4%;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.1) 
+        0px 10px 15px -3px, 
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        position: relative;
+        animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+        animation-fill-mode: both;
+        transition: 500ms;
+        animation-name: apparition;
+        animation-duration: 2s;
+        transform: scale(0);
+        .text-plat {
+            flex: 1;
+            padding-left: 10px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            h4,
+            p {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                margin: 0;
+                &:hover {
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+        }
+        .price {
+            display: flex;
+            align-items: flex-end;
+            font-weight: bold;
+            transition: all 700ms;
+            padding: 0px 10px 0px 10px;
+        }
+        .confirm {
+            transition: all 700ms;
+            height: 100%;
+            width: 70px;
+            background: #99E2D0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px -70px 0px 0px;
+            i {
+                background-color: #ffffff;
+                height: 20px;
+                width: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                color: #99E2D0;
+                font-size: 19px;
+                transition: all 200ms;
+            }
+        }
+        &:hover {
+            .confirm {
+                margin: 0px 0px 0px 0px;
+                i {
+                    animation: rotation 500ms ease-in;
+                }
+            }
+        }
+    }
+    /* delai */
+    .delai {
+        animation-name: thisitem;
+        animation-duration: 1.5s;
+        animation-iteration-count: unset;
+    }
+    .delai:nth-child(1) {
+        animation-delay: 0s;
+    }
+    .delai:nth-child(2) {
+        animation-delay: 100ms;
+    }    
+    .delai:nth-child(3) {
+        animation-delay: 200ms;
+    }    
+    .delai:nth-child(4) {
+        animation-delay: 300ms;
+    }    
+    .delai:nth-child(5) {
+        animation-delay: 400ms;
+    }    
+    .delai:nth-child(6) {
+        animation-delay: 500ms;
+    }    
+    .delai:nth-child(7) {
+        animation-delay: 600ms;
+    }    
+    .delai:nth-child(8) {
+        animation-delay: 700ms;
+    }    
+    .delai:nth-child(9) {
+        animation-delay: 800ms;
+    }
+
+    @keyframes thisitem {
+        0% {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1.1) translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* delai */
+    /* button commander */
+    .button {
+        position: relative;
+        width: 100%;
+        bottom: 50px;
+        background: rgb(228, 228, 228);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+            cursor: pointer;
+            height: 70px;
+            width: 190px;
+            font-size: 20px;
+            color: white;
+            background: linear-gradient(#FF79DA , #9356DC);
+            border: none;
+            border-radius: 50px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            transition: 500ms;
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+            }
+        }
+    }
+    /* button commander */
+    /* footer */
+.footer {
+    background-color: rgb(42, 42, 42);
+    color: white;
+    padding: 30px;
+    .ohmyfood-footer {
+        @import url(https://fonts.googleapis.com/css?family=Shrikhand:regular);
+        font-size: 25px;
+        font-family: 'Shrikhand';
+    }
+    .fas {
+        margin-right: 10px;
+    }
+}
+}
+@keyframes apparition {
+    0% {
+        opacity: 0;
+        transform: translateX(10px);
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(180deg);
+        
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+/* 
+
+
+
+
+                V.B
+
+
+
+
+*/
+@media screen and (min-width: 925px) {
+    body {
+        margin: 0;
+        font-family: roboto, sans-serif;
+    }
+    /* btn retour */ 
+    .retour {
+        position: absolute;
+        top: 25px;
+        left: 30px;
+        font-size: x-large;
+        cursor: pointer;
+        color: black;
+    }
+    /* logo */
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        img {
+            height: 40px;
+        }
+    }
+    /* cover */
+    .cover {
+        img {
+            width: 100%;;
+            object-fit: cover;
+        }
+    }
+    /* ..... */
+    #body {
+        background-color: rgb(228, 228, 228);
+    }
+    .body-page {
+        transform: translateY(-90px);
+        background: rgb(228, 228, 228);
+        border-radius: 50px 50px 0 0;
+        padding: 20px;
+    }
+    .titre-food {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+            font-family: shrikhand;
+            font-size: 30px;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+        /* heart */
+        .heart {
+            position: relative;
+            cursor: pointer;
+        }
+        .fas {
+            font-size: 30px;
+            opacity: 0%;
+            transition: all 400ms;
+            position: absolute;
+            left: 0;
+        }
+        .fas:hover {
+            opacity: 100%;
+            transform: scale(1.05);
+            color: #9356DC;
+        }
+        
+        .far {
+            font-size: 30px;
+            transition: all 400ms;
+            overflow: hidden;
+        }
+        .far:hover {
+            transform: scale(1.05);
+            color: #9356DC;
+            opacity: 0;
+        }
+    }
+
+    .entree,
+    .plats,
+    .desserts { 
+        h3 {
+            font-size: 20px;
+            font-weight: 100;
+            margin: 0;
+            margin-top: 40px;
+        }
+        .ligne-verte {
+            height: 5px;
+            width: 50px;
+            background: #99E2D0;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+    }
+    .card-plat {
+        height: 70px;
+        display: flex;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        margin-left: 4%;
+        margin-right: 4%;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.1) 
+        0px 10px 15px -3px, 
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        position: relative;
+        animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+        animation-fill-mode: both;
+        transition: 500ms;
+        animation-name: apparition;
+        animation-duration: 2s;
+        transform: scale(0);
+        .text-plat {
+            flex: 1;
+            padding-left: 10px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            h4,
+            p {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                margin: 0;
+                &:hover {
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+        }
+        .price {
+            display: flex;
+            align-items: flex-end;
+            font-weight: bold;
+            transition: all 700ms;
+            padding: 0px 10px 0px 10px;
+        }
+        .confirm {
+            transition: all 700ms;
+            height: 100%;
+            width: 70px;
+            background: #99E2D0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px -70px 0px 0px;
+            i {
+                background-color: #ffffff;
+                height: 20px;
+                width: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                color: #99E2D0;
+                font-size: 19px;
+                transition: all 200ms;
+            }
+        }
+        &:hover {
+            .confirm {
+                margin: 0px 0px 0px 0px;
+                i {
+                    animation: rotation 500ms ease-in;
+                }
+            }
+        }
+    }
+    /* delai */
+    .delai {
+        animation-name: thisitem;
+        animation-duration: 1s;
+        animation-iteration-count: unset;
+    }
+    .delai:nth-child(1) {
+        animation-delay: 0s;
+    }
+    .delai:nth-child(2) {
+        animation-delay: 100ms;
+    }    
+    .delai:nth-child(3) {
+        animation-delay: 200ms;
+    }    
+    .delai:nth-child(4) {
+        animation-delay: 300ms;
+    }    
+    .delai:nth-child(5) {
+        animation-delay: 400ms;
+    }    
+    .delai:nth-child(6) {
+        animation-delay: 500ms;
+    }    
+    .delai:nth-child(7) {
+        animation-delay: 600ms;
+    }    
+    .delai:nth-child(8) {
+        animation-delay: 700ms;
+    }    
+    .delai:nth-child(9) {
+        animation-delay: 800ms;
+    }
+
+    @keyframes thisitem {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1.1);
+        }
+    }
+
+    /* delai */
+    /* button commander */
+    .button {
+        position: relative;
+        width: 100%;
+        bottom: 50px;
+        background: rgb(228, 228, 228);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+            cursor: pointer;
+            height: 70px;
+            width: 190px;
+            font-size: 20px;
+            color: white;
+            background: linear-gradient(#FF79DA , #9356DC);
+            border: none;
+            border-radius: 50px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            transition: 500ms;
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+            }
+        }
+    }
+    /* button commander */
+    /* footer */
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        background-color: rgb(42, 42, 42);
+        color: white;
+        padding: 30px;
+    
+        .div___ {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          gap: 20px;
+        }
+        .ohmyfood-footer {
+            @import url(https://fonts.googleapis.com/css?family=Shrikhand:regular);
+            font-size: 25px;
+            font-family: 'Shrikhand';
+        }
+        .fas {
+            margin-right: 10px;
+        }
+    }
+}
+@keyframes apparition {
+    0% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(180deg);
+        
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
