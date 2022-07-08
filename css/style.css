@@ -19,7 +19,6 @@
     left: 0;
     top: 0;
     background-color: white;
-    -webkit-animation: loader .01s;
             animation: loader .01s;
     -webkit-animation-delay: 1.75s;
             animation-delay: 1.75s;
