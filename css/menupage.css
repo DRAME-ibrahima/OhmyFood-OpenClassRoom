@@ -4,13 +4,12 @@
 @import url(https://fonts.googleapis.com/css?family=Shrikhand:regular);
 @media screen and (max-width: 768px) {
   body {
-    margin: 0px;
     font-family: roboto, sans-serif;
   }
   /* btn retour */
   .retour {
     position: absolute;
-    top: 25px;
+    top: 24px;
     left: 30px;
     font-size: x-large;
     cursor: pointer;
